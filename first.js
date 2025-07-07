@@ -1,3 +1,4 @@
+//--------------------------Day 1--------------------------
 // This is a simple JavaScript program that prints messages to the console
 console.log("hello world");
 console.log("Anoy Khan");
@@ -97,9 +98,9 @@ console.log(typeof student.age); // "number"
 console.log(typeof student['name']); // "string"
 
 
-//---------------------summary---------------------
+//---------------------Note---------------------
 //let only update
-//const not updated and const obj key is updated
+//const is not updated and const obj key is updated
 
 //---------------------lets practice---------------------
 //qs1. Create a const object called "product" to store information.
@@ -122,3 +123,140 @@ const profile = {
     bio: "I am a web developer",
 };
 console.log(profile);
+
+
+//-----------------------Day 2-----------------------
+//--------------------operators---------------------
+// JavaScript has 6 types of operators: arithmetic, assignment, comparison, logical, bitwise, and ternary
+// Arithmetic Operators: +, -, *, /, %, ** (exponentiation)
+let a = 10;
+let b = 5;
+console.log("a = ", a, "& b = ", b); // a = 10, & b = 5
+console.log("a + b = ",a + b); // a + b = 15
+console.log("a - b = ",a - b); // a - b = 5
+console.log("a * b = ",a * b); // a * b = 50
+console.log("a / b = ",a / b); // a / b = 2
+console.log("a % b = ",a % b); // a + b = 0
+console.log("a ** b = ",a ** b); // a + b = 100000
+console.log("a++ = ",a++); // a++ = 10, a is now 11
+console.log("++a = ",++a); // ++a = 12, a is now 12
+console.log("a-- = ",a--); // a-- = 12 // a is now 11
+console.log("--a = ",--a); // --a = 10, a is now 10
+// Assignment Operators: =, +=, -=, *=, /=, %=, **=
+let c = 20;
+console.log("c = ", c); // c = 20
+c += 5; // c = c + 5
+console.log("c += 5 = ", c); // c += 5 = 25
+c -= 5; // c = c - 5
+console.log("c -= 5 = ", c); // c -= 5 = 20
+c *= 2; // c = c * 2
+console.log("c *= 2 = ", c); // c *= 2 = 40
+c /= 2; // c = c / 2
+console.log("c /= 2 = ", c); // c /= 2 = 20
+c %= 3; // c = c % 3
+console.log("c %= 3 = ", c); // c %= 3 = 2
+c **= 2; // c = c ** 2
+console.log("c **= 2 = ", c); // c **= 2 = 4
+// Comparison Operators: ==, ===, !=, !==, >, <, >=, <=
+let x1 = 10;
+let y1 = "10";
+console.log("x1 == y1: ", x1 == y1); // true, loose equality
+console.log("x1 === y1: ", x1 === y1); // false, strict equality
+console.log("x1 != y1: ", x1 != y1); // false, loose inequality
+console.log("x1 !== y1: ", x1 !== y1); // true, strict inequality
+console.log("x1 > y1: ", x1 > y1); // false
+console.log("x1 < y1: ", x1 < y1); // false
+console.log("x1 >= y1: ", x1 >= y1); // true
+console.log("x1 <= y1: ", x1 <= y1); // true
+// Logical Operators: &&, ||, !
+let a1 = true;
+let b1 = false;
+console.log("a1 && b1: ", a1 && b1); // false, logical AND
+console.log("a1 || b1: ", a1 || b1); // // true, logical OR
+console.log("!a1: ", !a1); // false // logical NOT
+// Bitwise Operators: &, |, ^, ~, <<, >>
+let a2 = 5; // 0101 in binary
+let b2 = 3; // 0011 in binary
+console.log("a2 & b2: ", a2 & b2); // 1 // 0001 in binary
+console.log("a2 | b2: ", a2 | b2); // 7 // 0111 in binary
+console.log("a2 ^ b2: ", a2 ^ b2); // 6 // 0110 in binary
+console.log("~a2: ", ~a2); // -6 // 1010 in binary
+console.log("a2 << 1: ", a2 << 1); // 10 // 1010 in binary
+console.log("a2 >> 1: ", a2 >> 1); // 2 // 0010 in binary
+// Ternary Operator: condition ? expr1 : expr2
+let age1 = 18;
+let canVote = (age1 >= 18) ? "Yes" : "No";
+console.log("Can vote: ", canVote); // Can vote: Yes    
+
+//--------------------Conditionals---------------------
+// JavaScript has 3 types of conditionals: if, else if, else
+let age2 = 24;
+if (age2 > 18) {
+    console.log("You can vote.");
+}
+else if (age2 === 18) {
+    console.log("You are 18 years old.");
+} else {
+    console.log("You cannot vote.");
+}
+
+//--------------------Switch Case---------------------
+// JavaScript has a switch case statement to handle multiple conditions
+let day = 3;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+}
+
+
+//---------------Pratice Seasion-----------------
+
+//Qs1. Get user to input a number using prompt("Enter a number: ").Check if the number is a muntiple of 5 or not.
+
+//let num = prompt("Enter a number: "); //before run please uncomment this line.
+let num = 25; // for testing purpose, before run please uncomment the above line.
+if( num % 5 === 0){
+    console.log(num, "is a multiple of 5.");
+}
+else{
+    console.log(num, "is NOT a multiple of 5.");
+}
+
+
+//Qs2. Write a code which can give grades to students according to their scores.
+// The grading system is as follows:
+// A: 90-100
+// B: 80-89
+// C: 70-79
+// D: 60-69
+// E: 50-59
+// F: 0-49
+
+//let score = prompt("Enter your score: "); //before run please uncomment this line.
+let score = 85; // for testing purpose, before run please uncomment the above line.
+if (score >= 90 && score <= 100) {
+    console.log(score, "Your grade is A");
+}else if (score >=80 && score <=89) {
+    console.log(score, "Your grade is B");
+}else if (score >=70 && score <=79) {
+    console.log(score, "Your grade is C");
+}else if (score >=60 && score <=69) {
+    console.log(score, "Your grade is D");
+}else if (score >=50 && score <=59) {
+    console.log(score, "Your grade is E");
+}else if (score >=0 && score <=49) {
+    console.log(score, "Your grade is F");
+}else{
+    console.log("Invalid score");
+}
+
