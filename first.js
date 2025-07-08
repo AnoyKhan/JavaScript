@@ -260,3 +260,352 @@ if (score >= 90 && score <= 100) {
     console.log("Invalid score");
 }
 
+
+
+//-----------------------Day 3-----------------------
+
+//--------------------Loops---------------------
+// JavaScript has 3 types of loops: for, while, do while
+// For Loop: for (initialization; condition; increment/decrement)
+
+for (let i = 0; i < 5; i++) {
+    console.log("For Loop: ", i); // 0, 1, 2, 3, 4
+}
+// While Loop: while (condition)
+let j = 0;
+while (j < 5) {
+    console.log("While Loop: ", j); // 0, 1, 2, 3, 4
+    j++;
+}
+// Do While Loop: do { } while (condition)
+let k = 0;
+do {
+    console.log("Do While Loop: ", k); // 0, 1, 2, 3, 4
+    k++;
+} while (k < 5);
+
+//---------------------For In Loop---------------------
+// For In Loop: for (variable in object)
+
+let student1 = {
+    name: "Anoy Khan",
+    age: 25,
+    cgpa: 3.75,
+    isPass: true
+};
+for (let key in student1) {
+    console.log("For In Loop: ", key, ":", student1[key]); // name: Anoy Khan, age: 25, cgpa: 3.75, isPass: true
+}
+
+//---------------------For Of Loop---------------------
+// The for...of loop is used to iterate over iterable objects like arrays, strings, etc
+let Fname = "AnoyKhan";
+let length = 0;
+for(let val of Fname){
+    console.log("i = ", val); // A, n, o, y, K, h, a, n
+    length++;
+}
+console.log("Length of Fname: ", length); // Length of Fname: 8
+
+
+//---------------------Practice Seasion-----------------
+
+//Qs1. Print all even numnbers from 0 to 100.
+
+for(let i =0; i<=100; i++){
+    if(i%2 ===0){
+        console.log(i);
+    }
+}
+
+//Qs2. Create a game where you start any random game number. Ask the user to keep guessing the number until the user enters correct value.
+
+let gameNumber = 25; // Random game number
+//let userGuess = prompt("guess the number: "); // User guess variable // before run please uncomment this line.
+let userGuess = 25; // For testing purpose, before run please uncomment the above line
+
+while(gameNumber != userGuess){
+    userGuess = prompt("Wrong guess! Try again: "); // Ask user to guess again
+}
+console.log("Congratulations! You guessed the number: ",userGuess); // User guessed the correct number
+
+
+//---------------------Template Literals (String) ---------------------
+// Template literals are enclosed by backticks (`) and can contain placeholders for variables using ${variableName}
+
+let obj = {
+    item : "Ball Pen",
+    price : 10,
+}
+let output = `The price of ${obj.item} is ${obj.price} tk`;
+console.log(output); // The price of Ball Pen is 10 tk
+
+let specialString = `This is a template literal ${1+2+3}`; // This is a template literal 6
+console.log(specialString); // This is a template literal 6
+// Template literals can also be used for multi-line strings
+let multiLineString = `This is a multi-line string
+It can span multiple lines
+And it can contain variables like ${obj.item} and ${obj.price}`;
+console.log(multiLineString);
+
+let aa = "collage";
+console.log(aa.toUpperCase()); // COLLAGE
+console.log(aa.toLowerCase()); // collage
+console.log(aa.trim()); // collage (removes whitespace from both ends)
+console.log(aa.slice(2)); // col (extracts a section of the string). slice(start, end?)
+console.log(aa.slice(0, 3)); // col (extracts a section of the string)
+let srt1 = "Hello";
+let srt2 = "World";
+console.log(srt1.concat(" ", srt2)); // Hello World (concatenates two strings)
+console.log(srt1.indexOf("l")); // 2 (returns the index of the first occurrence of a specified value)
+console.log(srt1.lastIndexOf("l")); // 3 (returns the index of the last occurrence of a specified value)
+console.log(srt1.includes("lo")); // true (checks if a string contains a specified value)
+console.log(srt1.startsWith("He")); // true (checks if a string starts with a specified value)
+console.log(srt1.endsWith("lo")); // true (checks if a string ends with a specified value)
+console.log(srt1.repeat(3)); // HelloHelloHello (repeats a string a specified number of times)
+console.log(srt1.split("l")); // [ 'He', '', 'o' ] (splits a string into an array of substrings)
+console.log(srt1.replace("l", "L")); // HeLlo (replaces a specified value in a string with another value)
+console.log(srt1.charAt(1)); // e (returns the character at a specified index)
+//String immutabile
+
+//---------------------Let's Practice---------------------
+
+/*Qs1. Prompt the user to enter their full name. GEnerate a username for them base on the input. Start username with @, followed by their full name and ending with the fullname length.
+eg: uer name = "Anoy Khan", username should be = "@AnoyKhan8"
+*/
+//let fullNameInput = prompt("Enter your full name: "); // before run please uncomment thisline.
+let fullNameInput = "AnoyKhan"; // For testing purpose, before run please uncomment the above line
+let userName = "@" + fullNameInput + fullNameInput.length; // Generate username
+//let username = `@${fullNameInput.replace(/\s/g, '')}${fullNameInput.length}`; //(/\s/g, ' ') //it is a Regular expression(regex) to remove spaces from the string.
+console.log("Your username is: ", userName); // Your username is: @AnoyKhan8
+
+
+//----------------------Day 4----------------------
+//---------------------Arrays---------------------
+// JavaScript has 2 types of arrays: single-dimensional and multi-dimensional
+// Single-dimensional array: an array with one level of elements
+let fruits = ["Apple", "Banana", "Orange", "Mango"];
+console.log("Fruits: ", fruits); // Fruits:  [ 'Apple', 'Banana', 'Orange', 'Mango' ]
+console.log("First fruit: ", fruits[0]); // First fruit:  Apple
+console.log("Last fruit: ", fruits[fruits.length - 1]); // Last fruit:  Mango
+console.log("Length of fruits array: ", fruits.length); // Length of fruits array: 4
+// Multi-dimensional array: an array with multiple levels of elements
+let multiArray = [
+    ["Apple", "Banana", "Orange"],
+    ["Mango", "Pineapple", "Grapes"],
+    ["Strawberry", "Blueberry", "Raspberry"]
+];
+console.log("Multi-dimensional array: ", multiArray); // Multi-dimensional array:  [ [ 'Apple', 'Banana', 'Orange' ], [ 'Mango', 'Pineapple', 'Grapes' ], [ 'Strawberry', 'Blueberry', 'Raspberry' ] ]
+console.log("First element of first array: ", multiArray[0][0]); // First element of first array:  Apple
+console.log("Last element of last array: ", multiArray[multiArray.length - 1][multiArray[multiArray.length - 1].length - 1]); // Last element of last array:  Raspberry
+console.log("Length of multiArray: ", multiArray.length); // Length of multiArray: 3
+
+for(let val of fruits){
+    console.log("Fruit: ", val); // Fruit: Apple, Banana, Orange, Mango
+}
+
+//---------------------Practice Seasion---------------------
+
+//Qs1. For a given array with marks of students -> [85,97,44,37,76,60] find the avagarge marks of the entire class.
+
+let markes = [85, 97, 44, 37, 76, 60];
+let sum = 0;
+for (let mark of markes) {
+    sum += mark; // sum = sum + mark
+}
+let average = sum / markes.length; // Calculate average
+console.log(`avg marks of the class = ${average}`); // Average marks of the class: 66.5
+
+
+//Qs2. For a given array with prices of 5 items -> [100, 200, 300, 400, 500] All items have an offer of 10% OFF on them. Change the array to store final price after applying offer.
+
+let items = [100, 200, 300, 400, 500];
+for(let i =0; i<items.length; i++){
+    let offer = items[i] / 10; // Apply 10% OFF on each item
+    items[i] -= offer; // Update the item price after applying offer;
+}
+console.log("Final prices after applying offer: ", items); // Final prices after applying offer: [ 90, 180, 270, 360, 450 ]
+
+//---------------------Array Methods---------------------
+// JavaScript has many built-in array methods to manipulate arrays
+// Array Methods: push, pop, shift, unshift, splice, slice, concat,
+// forEach, map, filter, reduce, find, findIndex, includes, indexOf
+// push: adds one or more elements to the end of an array and returns the new length
+let arr = [1, 2, 3];
+arr.push(4, 5); // Adds 4 and 5 to the end of the array
+console.log("After push: ", arr); // After push: [ 1, 2, 3, 4, 5 ]
+// pop: removes the last element from an array and returns that element
+let lastElement = arr.pop(); // Removes the last element (5) from the array
+console.log("After pop: ", arr); // After pop: [ 1, 2, 3, 4 ]
+console.log("Popped element: ", lastElement); // Popped element: 5
+// shift: removes the first element from an array and returns that element
+let firstElement = arr.shift(); // Removes the first element (1) from the array
+console.log("After shift: ", arr); // After shift: [ 2, 3, 4 ]
+console.log("Shifted element: ", firstElement); // Shifted element: 1
+// unshift: adds one or more elements to the beginning of an array and returns the new length
+arr.unshift(0); // Adds 0 to the beginning of the array
+console.log("After unshift: ", arr); // After unshift: [ 0, 2, 3, 4 ]
+// splice: changes the contents of an array by removing or replacing existing elements and/or adding new elements
+arr.splice(1, 2, 1, 2); // Removes 2 elements starting from index 1 and adds 1 and 2 at that position
+console.log("After splice: ", arr); // After splice: [ 0, 1, 2, 4 ]
+// slice: returns a shallow copy of a portion of an array into a new array object
+let slicedArray = arr.slice(1, 3); // Returns a new array with elements from index 1 to index 3 (not inclusive)
+console.log("Sliced array: ", slicedArray); // Sliced array: [ 1, 2 ]
+// concat: merges two or more arrays and returns a new array
+let arr2 = [5, 6, 7];
+let concatenatedArray = arr.concat(arr2); // Merges arr and arr2 into a new array
+console.log("Concatenated array: ", concatenatedArray); // Concatenated array: [ 0, 1, 2, 4, 5, 6, 7 ]
+// forEach: executes a provided function once for each array element
+arr.forEach((element, index) => {
+    console.log(`Element at index ${index}: ${element}`); // Element at index 0: 0, Element at index 1: 1, etc.
+});
+// map: creates a new array populated with the results of calling a provided function on every element in the calling array
+let mappedArray = arr.map((element) => element * 2); // Multiplies each element by 2
+console.log("Mapped array: ", mappedArray); // Mapped array: [ 0, 2, 4, 8 ]
+// filter: creates a new array with all elements that pass the test implemented by the provided function
+let filteredArray = arr.filter((element) => element > 1); // Filters elements greater than 1
+console.log("Filtered array: ", filteredArray); // Filtered array: [ 2, 4 ]
+// reduce: executes a reducer function on each element of the array, resulting in a single output value
+let sum2 = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0); // Sums all elements in the array
+console.log("Sum of array: ", sum2); // Sum of array: 7
+// find: returns the value of the first element in the array that satisfies the provided testing function
+let foundElement = arr.find((element) => element > 2); // Finds the first element greater than 2
+console.log("Found element: ", foundElement); // Found element: 4
+// findIndex: returns the index of the first element in the array that satisfies the provided testing function
+let foundIndex = arr.findIndex((element) => element > 2); // Finds the index of the first element greater than 2
+console.log("Found index: ", foundIndex); // Found index: 2
+// includes: determines whether an array includes a certain value among its entries, returning true or false
+let includesElement = arr.includes(2); // Checks if the array includes the element 2
+console.log("Array includes 2: ", includesElement); // Array includes 2: true
+// indexOf: returns the first index at which a given element can be found in the array
+
+//--------Remove Arry---------------
+//pop: remove the last element from an array and returns that element
+//shift: remove the first element from an array and returns that element
+
+//-----------------Replace Array Elements-----------------
+//splice: change the contents of an array by removing or replacing existing elements and/or adding new elements splice(start, deleteCount, item1, item2, ...)
+
+//---------------- Add Array Elements ----------------
+//push: add one or more elements to the end of an array and returns the new length
+//unshift: add one or more elements to the beginning of an array and returns the new length
+
+
+
+//-------------------Day 5-------------------
+//---------------------Funcions---------------------
+// JavaScript has 3 types of functions: function declaration, function expression, arrow function
+// Function Declaration: function functionName(parameters) { body }
+function greet(name) {
+    console.log("Hello, " + name + "!"); // Function body
+}
+greet("Anoy Khan"); // Calling the function with an argument
+
+// Function Expression: const functionName = function(parameters) { body }
+const greetExpression = function(name) {
+    console.log("Hello, " + name + "!"); // Function body
+}
+greetExpression("Anoy Khan"); // Calling the function with an argument
+
+// Arrow Function: const functionName = (parameters) => { body }
+const greetArrow = (name) => {
+    console.log("Hello, " + name + "!"); // Function body
+}
+greetArrow("Anoy Khan"); // Calling the function with an argument
+
+//---------------------Function Parameters and Arguments---------------------
+// Function parameters are the variables listed in the function definition, while arguments are the values passed to the function when it is called
+function add(a, b) {
+    return a + b; // Returns the sum of a and b
+}
+let sum3 = add(5, 10); // Calling the function with arguments 5 and 10
+console.log("Sum: ", sum3); // Sum: 15
+// Function with default parameters
+function multiply(a, b = 1) {
+    return a * b; // Returns the product of a and b
+}
+let product1 = multiply(5); // Calling the function with only one argument, b will take the default value of 1
+console.log("Product: ", product1); // Product: 5
+
+const arrowSum = (a, b) => {
+    console.log(a + b);
+};
+
+arrowSum(12,231);
+
+//---------------------Practice Seasion---------------------
+
+//Qs1. Create a function using the "function" keyword that takes a String as an argument and returns the number of vowels in the string.
+
+function countVowels(str){
+    let count = 0;
+    for(let char of str){
+        if(
+            char === 'a' || 
+            char === 'e' || 
+            char === 'i' || 
+            char === 'o' || 
+            char === 'u' ||
+            char === 'A' || 
+            char === 'E' || 
+            char === 'I' || 
+            char === 'O' || 
+            char === 'U'
+        ) {
+            count++;
+        }
+    }
+    console.log(count);
+}
+countVowels("Anoy Khan"); // 3
+
+
+//Qs2. Create an arrow function to perform the same task.
+
+const countVowelsArrow = (str) => {
+    let count = 0;
+    for(let char of str){
+        if(
+            char === 'a' || 
+            char === 'e' || 
+            char === 'i' || 
+            char === 'o' || 
+            char === 'u' || 
+            char === 'A' || 
+            char === 'E' || 
+            char === 'I' || 
+            char === 'O' || 
+            char === 'U'
+        ) {
+            count++;
+        }
+    }
+    console.log(count);
+}
+countVowelsArrow("Anoy Khan"); // 3
+
+//---------------------forEach Loop---------------------
+// The forEach() method executes a provided function once for each array element
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number, index) => {
+    console.log(`Element at index ${index}: ${number}`); // Element at index 0: 1, Element at index 1: 2, etc.
+}
+); 
+
+numbers.forEach((number) => {
+    console.log("Number: ", number); // Number: 1, Number: 2, etc.
+}
+);
+ //forEach Loop is a High Order Function (HOF) that takes a callback function as an argument and executes it for each element in the array. It does not return a new array, but rather performs an action for each element in the original array.
+
+
+//---------------------Practice Seasion---------------------
+
+//Qs1. For a given array of numbers, print the square of each value using forEach loop.
+
+let arr3 = [1,2,3,4,5]
+
+arr.forEach((val) =>{
+    console.log(val * val);
+}
+);
