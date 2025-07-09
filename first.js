@@ -609,3 +609,127 @@ arr.forEach((val) =>{
     console.log(val * val);
 }
 );
+
+//--------------------Map Method---------------------
+// The map() method creates a new array populated with the results of calling a provided function on every element in the calling array
+let numbers2 = [1, 2, 3, 4, 5];
+
+arr3.map((val) => {
+    console.log(val * val);
+});
+// Using map to create a new array with squared values
+let squaredNumbers = numbers2.map((number) => number * number); // Squares each element in the array
+console.log("Squared Numbers: ", squaredNumbers); // Squared Numbers: [ 1, 4, 9, 16, 25 ]
+
+// The map() method is also a High Order Function (HOF) that takes a callback function as an argument and returns a new array with the results of calling the callback function on each element in the original array. It does not modify the original array.
+
+//----------------------Filter Method----------------------
+// The filter() method creates a new array with all elements that pass the test implemented by the provided function
+let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];// Using filter to create a new array with even numbers
+let evenValue = numbers3.filter((val) => {
+    return val % 2 === 0; // Returns true for even numbers
+})
+console.log("Even Values: ", evenValue); // Even Values: [ 2, 4, 6, 8, 10 ]
+
+let evenNumbers = numbers3.filter((number) => number % 2 === 0); // Filters even numbers from the array
+console.log("Even Numbers: ", evenNumbers); // Even Numbers: [ 2, 4, 6, 8, 10 ]
+// The filter() method is also a High Order Function (HOF) that takes a callback function as an argument and returns a new array with the elements that pass the test implemented by the callback function. It does not modify the original array.
+
+//----------------------Reduce Method----------------------
+// The reduce() method executes a reducer function on each element of the array, resulting in a single output value
+
+let numbers4 = [1, 2, 3, 4];
+const output2 = numbers4.reduce((res, curr) => {
+    return res + curr; // Sums all elements in the array
+});
+console.log("Sum of numbers: ", output2); // Sum of numbers: 10
+// The reduce() method is also a High Order Function (HOF) that takes a callback function as an argument and returns a single output value by executing the callback function on each element in the array. It can be used to perform various operations like summation, multiplication, etc.
+
+//----------------------Practice Seasion----------------------
+
+//Qs1. Find out the largest number in an array using reduce method.
+let numbers5 = [1, 2, 5, 3, 4];
+
+const largestNumber = numbers5.reduce((res , curr) => {
+    return res > curr ? res : curr; // Returns the larger of the two numbers
+});
+console.log("Largest Number: ", largestNumber); // Largest Number: 5
+
+//Qs2. We are given array of marks of students. Filter out of the marks of students that scored 90+.
+
+let marks = [85, 97, 44, 37, 76, 60, 90, 92];
+let highScorers = marks.filter((mark) => mark > 90); // Filters marks greater than or equal to 90
+console.log("High Scorers: ", highScorers); // High Scorers: [ 97, 92 ]
+
+//Qs3. Take a number n as input from user. Create an array of numbers from 1 to n. use the reduce method to calculate sum of all numbers in the array. use the reduce method to calculate product of all numbers in the array.
+
+//let n = prompt("Enter a number: "); // before run please uncomment this line.
+let n = 5; // For testing purpose, before run please uncomment the above line
+let arr4 = [];
+for(let i = 1; i < n; i++) {
+    arr4[i - 1] = i; // Creates an array of numbers from 1 to n
+}
+console.log("Array of numbers from 1 to n: ", arr4); // Array of numbers from 1 to n: [ 1, 2, 3, 4, 5 ]
+let sumOfNumbers = arr4.reduce((acc, curr) => acc + curr, 0); // Calculates the sum of all numbers in the array
+console.log("Sum of all numbers: ", sumOfNumbers); // Sum of all numbers: 15
+let productOfNumbers = arr4.reduce((acc, curr) => acc * curr, 1); // Calculates the product of all numbers in the array
+console.log("Product of all numbers: ", productOfNumbers); // Product of all numbers: 120
+
+
+//----------------------Day 6----------------------
+//---------------------DOM---------------------
+// DOM (Document Object Model) is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing programming languages to manipulate the content, structure, and style of the document. In JavaScript, we can interact with the DOM using various methods and properties
+// to access and modify HTML elements, attributes, and styles.
+// The DOM is a tree-like structure where each node represents an element in the HTML document.
+// The root node is the document object, and each element in the HTML document is represented as a node in the tree.
+// The DOM provides methods to traverse the tree, access elements, and modify their content and attributes.
+// For example, we can use document.getElementById() to access an element by its ID, document.querySelector() to access an element using a CSS selector, and document.createElement() to create a new element.
+// We can also use properties like innerHTML, textContent, and style to modify the content and style of elements.
+// The DOM is an essential part of web development, as it allows us to create dynamic and interactive web pages by manipulating the content and structure of the document using JavaScript.
+// The DOM is not a part of JavaScript, but rather a separate API that JavaScript can use to interact with HTML documents.
+// The DOM is a platform- and language-neutral interface, meaning it can be used with any programming language that can manipulate HTML documents.
+//---------------------Accessing DOM Elements---------------------
+// There are several methods to access DOM elements in JavaScript:
+// 1. document.getElementById(id): Returns the element with the specified ID.
+let elementById = document.getElementById("myElement");
+console.log("Element by ID: ", elementById); // Element by ID: <div id="myElement">Hello, World!</div>
+// 2. document.getElementsByClassName(className): Returns a collection of elements with the specified class name.
+let elementsByClassName = document.getElementsByClassName("myClass");
+console.log("Elements by Class Name: ", elementsByClassName); // Elements by Class Name: HTMLCollection(2) [div.myClass, div.myClass]
+console.log("First Element by Class Name: ", elementsByClassName[0]); // First Element by Class Name: <div class="myClass">Hello, World!</div>
+// 3. document.getElementsByTagName(tagName): Returns a collection of elements with the specified tag name.
+let elementsByTagName = document.getElementsByTagName("div");
+console.log("Elements by Tag Name: ", elementsByTagName); // Elements by Tag Name: HTMLCollection(3) [div#myElement, div.myClass, div.myClass]
+console.log("First Element by Tag Name: ", elementsByTagName[0]); // First Element by Tag Name: <div id="myElement">Hello, World!</div>
+
+// 4. document.querySelector(selector): Returns the first element that matches the specified CSS selector.
+let elementBySelector = document.querySelector(".myClass");
+console.log("Element by Selector: ", elementBySelector); // Element by Selector: <div class="myClass">Hello, World!</div>
+// 5. document.querySelectorAll(selector): Returns a collection of elements that match the specified CSS selector. 
+
+let div = document.querySelector("div");
+console.dir(div); // Displays the properties and methods of the first div element in the console
+
+//---------------------Modifying DOM Elements---------------------
+// We can modify the content, attributes, and styles of DOM elements using various properties and methods
+// 1. Modifying Content: We can use innerHTML or textContent to change the content of an element.
+let myElement = document.getElementById("myElement");
+myElement.innerHTML = "New Content"; // Changes the inner HTML of the element
+console.log("Modified Content: ", myElement.innerHTML); // Modified Content: New Content
+myElement.textContent = "New Text Content"; // Changes the text content of the element
+console.log("Modified Text Content: ", myElement.textContent); // Modified Text Content: New Text Content
+
+//----------------------Pratice Seasion----------------------
+
+//Qs1. Create a H2 heading element with text - "Hello javaScript". Append "from the DOM" to this text using js.
+
+let h2 = document.querySelector("h2");
+console.dir(h2.innerText); // Displays the text content of the h2 element in the console
+h2.innerText += " from the DOM"; // Appends "from the DOM" to the existing text of the h2 element
+
+//Qs2. Create 3 divs with common class name- "box". Access them & add some unique text to each of them.
+
+let divs = querySelectorAll(".box"); // Selects all div elements with the class "box"
+divs[0].innerText = "Box 1"; // Adds unique text to the first div
+divs[1].innerText = "Box 2"; // Adds unique text to the second div
+divs[2].innerText = "Box 3"; // Adds unique text to the third div   
