@@ -730,6 +730,9 @@ h2.innerText += " from the DOM"; // Appends "from the DOM" to the existing text 
 //Qs2. Create 3 divs with common class name- "box". Access them & add some unique text to each of them.
 
 let divs = querySelectorAll(".box"); // Selects all div elements with the class "box"
-divs[0].innerText = "Box 1"; // Adds unique text to the first div
-divs[1].innerText = "Box 2"; // Adds unique text to the second div
-divs[2].innerText = "Box 3"; // Adds unique text to the third div   
+let idx = 1;
+for (let div of divs) {
+    div.innerText = `This is box ${idx}`; // Adds unique text to each div
+    idx++;
+}
+ 
